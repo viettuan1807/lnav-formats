@@ -1,0 +1,45 @@
+{
+  "SPRING_LOGBACK": {
+    "title": "Logback log format",
+    "description": "Log format used by spring-boot",
+    "url": "https://github.com/spring-projects/spring-boot/blob/master/spring-boot-project/spring-boot/src/main/resources/org/springframework/boot/logging/logback/defaults.xml",
+    "regex": {
+      "onestamp": {
+        "pattern": "^(?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}(?:.\\d{3})?)\\s+(?<level>\\w+)\\s?(?<process>\\d+) --- \\[(?<thread>[\\w\\d -]+)\\] (?<class>[A-Za-z\\$0-9\\<\\>.]*)\\s+(?<body>\\S.*)$"
+      }
+    },
+    "level": {
+      "error": "ERROR",
+      "warning": "WARN",
+      "info": "INFO",
+      "debug": "DEBUG",
+      "trace": "TRACE"
+    },
+    "value": {
+      "level": {
+        "kind": "string",
+        "identifier": true
+      },
+      "process": {
+        "kind": "integer",
+        "identifier": true
+      },
+      "thread": {
+        "kind": "string",
+        "identifier": true
+      },
+      "class": {
+        "kind": "string",
+        "identifier": true
+      },
+      "body": {
+        "kind": "string"
+      }
+    },
+    "sample": [
+      {
+        "line": "2020-08-24 13:43:34.833 DEBUG 31400 --- [SpringContextShutdownHook] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown"
+      }
+    ]
+  }
+}
